@@ -1,12 +1,14 @@
 name: WorkLoad Healthcheck
 on: 
   workflow_dispatch:
+
 jobs:
   workload-healthcheck:
-    strategy:
-      fail-fast: false
-    jobs:
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout Branch
         uses: actions/checkout@v3
-      - name: Test files
+      - name: Install workload HC helm chart
         run: cat ./docker-compose.yml
+      - name: folder
+        run: cat ./src/App.test.js
